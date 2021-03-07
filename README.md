@@ -50,9 +50,6 @@ For interacting with docker container, commands are following:
     To get information about <container_id> can be used 'docker ps' command
 
 
-    The corresponding curl command can be loaded in a web brower with the same syntax
-
-
 Dependecies
 -------------
 * Docker

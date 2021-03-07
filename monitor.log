@@ -1,0 +1,8 @@
+INFO: fibonacci_s((0,)):0.0 seconds
+ERROR: Negative value is not accepted: -1
+ERROR: Negative value is not accepted: -1
+INFO: fibonacci_s((123,)):0.997 seconds
+INFO: factorial_s((123,)):0.0 seconds
+INFO: factorial_s((1234,)):0.3154 seconds
+INFO: factorial_s((1234,)):0.3727 seconds
+ERROR: Negative value is not accepted: -1234

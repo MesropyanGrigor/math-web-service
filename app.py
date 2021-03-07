@@ -56,7 +56,7 @@ class Service(BaseHTTPRequestHandler):
 
     def do_GET(self):
         data = self._get_data()
-        match_obj = re.match(r"(\w+)\(([\d, ]+)\)", data)
+        match_obj = re.match(r"(\w+)\(([\d, -]+)\)", data)
         func_name = match_obj.group(1)
         vals = tuple(match_obj.group(2).split(','))
         self.wfile.write(str(self.read(func_name, *vals)).encode())
@@ -98,6 +98,10 @@ class Service(BaseHTTPRequestHandler):
             self.error(f"Not valid name: {func_name}")
             return False
         for val in vals:
+            if int(val) < 0:
+                self.LOGGER.error(f"Negative value is not accepted: {val}")
+                self.error(f"Negative value is not accepted: {val}")
+                return False
             if val != int(val):
                 self.LOGGER.error(f"Not integer type: {val}")
                 self.error(f"Not integer type: {val}")
