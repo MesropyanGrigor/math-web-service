@@ -4,9 +4,9 @@ Math Web service
 Web service accepts a function short name and value or values as inputs and return the corresponding calculated value.
 
 During Service running all called functions are monitored, for that created 'monitor.log' file.
-Will be logged python math's module function name with its argument and run time in seconds.
+Will be logged python math's module function name with its argument and run time in seconds and microseconds.
 
-It is presumed that negative value will not be provided.
+It is presumed that negative value will not be provided, as otherwise will be provided error message.
 
 
 Example: 
@@ -50,14 +50,16 @@ For interacting with docker container, commands are following:
     To get information about <container_id> can be used 'docker ps' command
 
 
-Dependecies
+Dependencies
 -------------
 * Docker
 * Python 3
 
 Test
+----
     - For testing math functions used doctest module 
-    - They are simple methamtical functions and doctest in this case is fitting very well
+    - They are simple mathematical functions and doctest in this case is fitting very well
 
 CMD
+---
     - python app.py
