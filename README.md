@@ -10,25 +10,30 @@ It is presumed that negative value will not be provided.
 
 
 Example: 
+--------
     INFO: factorial_s((124545,)): 13 seconds
     INFO: ackermann((3, 5)): 0 seconds
     INFO: ackermann((3, 4)): 0 seconds
 
 Available function list is following:
+-------------------------------------
     -The n:th Fibonacci number F(n) with the value of n provided by the user.
     -The Ackermann function A(m,n) with values of m and n provided by the user.
     -The factorial n! of a non-negative integer n provided by the user.
 
 
 Example with curl:
+-------------------
     - curl -X GET --data "fib(147)" 127.0.0.1:8888 # 2353412818241252672952597492098
     - curl -X GET --data "ack(3, 4)" 127.0.0.1:8888 # 125
     - curl -X GET --data "fac(6)" 127.0.0.1:8888 # 720
 
 For deployment in the cloud environment:
+----------------------------------------
     - Created "Dockerfile" file, which can be used to create a docker image and be deployed as a container an send requests to the RESTful web service
 
 Docker deployment commands:
+---------------------------
     Docker build:
         - docker build --pull --rm -f "Dockerfile" -t klarna:latest "klarna" 
     Docker run:
@@ -37,6 +42,7 @@ Docker deployment commands:
 
 
 For interacting with docker container, commands are following:
+--------------------------------------------------------------
     - docker exec <contianer_id> curl -X GET --data "fib(147)" 127.0.0.1:8888 # 2353412818241252672952597492098
     - docker exec <contianer_id> curl -X GET --data "ack(3, 4)" 127.0.0.1:8888 # 125
     - docker exec <contianer_id> curl -X GET --data "fac(6)" 127.0.0.1:8888 # 720
