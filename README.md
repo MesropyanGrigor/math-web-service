@@ -35,9 +35,9 @@ For deployment in the cloud environment:
 Docker deployment commands:
 ---------------------------
     Docker build:
-        - docker build --pull --rm -f "Dockerfile" -t klarna:latest "klarna" 
+        - docker build --pull --rm -f "math-web-service/Dockerfile" -t math-web-service:latest "math-web-service" 
     Docker run:
-        - docker run --rm -it  -p 8888:8888/tcp klarna:latest
+        - docker run --rm -it  -p 8888:8888/tcp math-web-service:latest
 
 
 
