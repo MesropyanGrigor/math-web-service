@@ -2,6 +2,11 @@
 #    if n not in fib_catch:
 #        fib_catch[n] = fibonacci(n - 1, fib_catch) + fibonacci(n - 2, fib_catch)
 #    return fib_catch[n]
+import sys
+
+from functools import lru_cache
+
+sys.setrecursionlimit(5000)
 
 def fibonacci_s(n):
     """
@@ -37,6 +42,7 @@ def factorial_s(n):
         result *= _
     return result
 
+@lru_cache(maxsize=None, typed=False)
 def ackermann(m, n):
     """A(0,n) = n+1, A(m,0) = A(m-1,1), A(m,n) = A(m-1, A(m, n- 1))
     >>> ackermann(3, 4)
